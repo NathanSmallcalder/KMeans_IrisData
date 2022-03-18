@@ -1,10 +1,12 @@
+from cProfile import label
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 from sklearn.datasets._samples_generator import make_blobs
 from sklearn.cluster import KMeans
+from sklearn import preprocessing
 
-data = pd.read_csv('Iris\iris.csv')
+data = pd.read_csv('iris.csv')
 
 plt.xlim(0,10)
 plt.ylim(0,10)
@@ -17,7 +19,7 @@ print(identified_clusters)
 
 data_with_clusters = data.copy()
 data_with_clusters['Clusters'] = identified_clusters 
-plt.scatter(data_with_clusters['PetalLength'],data_with_clusters['SepalLength'],c=data_with_clusters['Clusters'],cmap='rainbow')
-plt.xlabel('Petal Length')
-plt.ylabel('Sepal Length')
+plt.scatter(data_with_clusters['SepalWidth'],data_with_clusters['PetalLength'],c=data_with_clusters['Clusters'],cmap='rainbow')
+plt.xlabel('Sepal Width')
+plt.ylabel('Petal Length')
 plt.show()
