@@ -14,14 +14,14 @@ x = data.iloc[:,[0,1,2,3]].values
 print(x)
 
 wcss=[]
-for i in range(1,7):
+for i in range(1,11):
     kmeans = KMeans(i)
     kmeans.fit(x)
     wcss_iter = kmeans.inertia_
     wcss.append(wcss_iter)
    
 print(wcss)
-number_clusters = range(1,7)
+number_clusters = range(1,11)
 plt.plot(number_clusters,wcss)
 plt.title('Elbow Graph')
 plt.xlabel('Number of clusters')
