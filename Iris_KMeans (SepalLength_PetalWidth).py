@@ -4,6 +4,7 @@ from matplotlib import pyplot as plt
 from sklearn.datasets._samples_generator import make_blobs
 from sklearn.cluster import KMeans
 
+
 #Reading the datafile
 data = pd.read_csv('iris.csv')
 
@@ -18,12 +19,13 @@ x = data.iloc[:,[0,1,2,3]].values
 kmeans = KMeans(n_clusters = 3, init = 'k-means++', max_iter = 300, n_init = 10, random_state = 0)
 y_kmeans = kmeans.fit_predict(x)
 
+
 #Plotting Sepal Length Against Petal Width
-plt.scatter(x[y_kmeans == 0, 0], x[y_kmeans == 0, 3], s = 100, c = 'purple', label = 'Iris-versicolour')
-plt.scatter(x[y_kmeans == 1, 0], x[y_kmeans == 1, 3], s = 100, c = 'blue', label = 'Iris-setosa')
-plt.scatter(x[y_kmeans == 2, 0], x[y_kmeans == 2, 3], s = 100, c = 'green', label = 'Iris-virginica')
-plt.ylabel('PetalWidth')
-plt.xlabel('SepalLength')
+plt.scatter(x[y_kmeans == 0, 0], x[y_kmeans == 0, 3], s = 50, c = 'purple', label = 'Iris-versicolor')
+plt.scatter(x[y_kmeans == 1, 0], x[y_kmeans == 1, 3], s = 50, c = 'blue', label = 'Iris-setosa')
+plt.scatter(x[y_kmeans == 2, 0], x[y_kmeans == 2, 3], s = 50, c = 'green', label = 'Iris-virginica')
+plt.ylabel('Petal Width')
+plt.xlabel('Sepal Length')
 
 #Plotting the centroids of the clusters
 plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:,3], s = 100, c = 'red', label = 'Centroids')

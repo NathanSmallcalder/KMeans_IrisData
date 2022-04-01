@@ -20,8 +20,8 @@ y_kmeans = kmeans.fit_predict(x)
 
 #Plotting Sepal Length Against Petal Length
 plt.scatter(x[y_kmeans == 0, 0], x[y_kmeans == 0, 2], s = 50, c = 'purple', label = 'Iris-versicolor')
-plt.scatter(x[y_kmeans == 1, 0], x[y_kmeans == 1, 2], s = 100, c = 'blue', label = 'Iris-setosa')
-plt.scatter(x[y_kmeans == 2, 0], x[y_kmeans == 2, 2], s = 100, c = 'green', label = 'Iris-virginica')
+plt.scatter(x[y_kmeans == 1, 0], x[y_kmeans == 1, 2], s = 50, c = 'blue', label = 'Iris-setosa')
+plt.scatter(x[y_kmeans == 2, 0], x[y_kmeans == 2, 2], s = 50, c = 'green', label = 'Iris-virginica')
 plt.ylabel('Petal Length')
 plt.xlabel('Sepal Length')
 

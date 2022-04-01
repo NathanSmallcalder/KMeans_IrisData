@@ -19,7 +19,7 @@ kmeans = KMeans(n_clusters = 3, init = 'k-means++', max_iter = 300, n_init = 10,
 y_kmeans = kmeans.fit_predict(x)
 
 #Plotting Sepal Length Against SepalWidth
-plt.scatter(x[y_kmeans == 0, 0], x[y_kmeans == 0, 1], s = 50, c = 'purple', label = 'Iris-versicolour')
+plt.scatter(x[y_kmeans == 0, 0], x[y_kmeans == 0, 1], s = 50, c = 'purple', label = 'Iris-versicolor')
 plt.scatter(x[y_kmeans == 1, 0], x[y_kmeans == 1, 1], s = 50, c = 'blue', label = 'Iris-setosa')
 plt.scatter(x[y_kmeans == 2, 0], x[y_kmeans == 2, 1], s = 50, c = 'green', label = 'Iris-virginica')
 plt.ylabel('Sepal Width')

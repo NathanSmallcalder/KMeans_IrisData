@@ -7,6 +7,7 @@ from sklearn.datasets._samples_generator import make_blobs
 from sklearn.cluster import KMeans
 from sklearn import preprocessing
 
+
 data = pd.read_csv('iris.csv')
 
 
@@ -19,6 +20,7 @@ for i in range(1,11):
     kmeans.fit(x)
     wcss_iter = kmeans.inertia_
     wcss.append(wcss_iter)
+   
    
 print(wcss)
 number_clusters = range(1,11)
